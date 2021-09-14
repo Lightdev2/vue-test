@@ -1,0 +1,12 @@
+@import './blocks/app-wrapper.scss';
+@import './blocks/header.scss';
+@import './blocks/file-row.scss';
+@import './blocks/folders-list.scss';
+html {
+    background-color: rgb(13, 17, 23);
+}
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

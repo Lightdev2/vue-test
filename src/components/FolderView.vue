@@ -77,11 +77,6 @@
 <script>
 import FileView from "./FileView";
 export default {
-  data() {
-    return {
-      //isOpen: false,
-    };
-  },
   name: "FolderView",
   components: { FileView },
   props: {
@@ -93,55 +88,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.folders-list {
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-  padding-left: 5px;
-  border: 1px solid;
-  border-radius: 5px;
-  padding-right: 5px;
-  border-color: rgb(34, 39, 46);
-  color: rgb(186, 193, 194);
-  &__folder {
-    display: flex;
-    align-items: center;
-    @media screen and (min-width: 767px) {
-      width: 50%;
-    }
-  }
-  &__length {
-    @media screen and (min-width: 767px) {
-      width: 15%;
-    }
-  }
-  &__item {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  &__folder-name {
-    padding: 5px;
-  }
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    @media screen and (max-width: 767px) {
-      justify-content: space-between;
-    }
-    &:hover {
-      background-color: rgb(22, 27, 34);
-    }
-  }
-  &__type {
-    padding-right: 15px;
-    @media screen and (min-width: 767px) {
-      width: 35%;
-      padding-right: 0;
-    }
-  }
-}
-</style>
