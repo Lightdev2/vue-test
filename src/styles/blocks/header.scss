@@ -6,7 +6,7 @@
     border-bottom: 2px solid grey;
     margin-bottom: 5px;
     font-size: 18px;
-    color: rgb(186, 193, 194);
+    color: $whitegrey;
     @media screen and (max-width: 767px) {
       justify-content: space-between;
     }

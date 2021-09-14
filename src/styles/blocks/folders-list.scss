@@ -7,7 +7,7 @@
     border-radius: 5px;
     padding-right: 5px;
     border-color: rgb(34, 39, 46);
-    color: rgb(186, 193, 194);
+    color: $whitegrey;
     &__folder {
       display: flex;
       align-items: center;
@@ -35,7 +35,7 @@
         justify-content: space-between;
       }
       &:hover {
-        background-color: rgb(22, 27, 34);
+        background-color: $hovercolor;
       }
     }
     &__type {
