@@ -47,7 +47,7 @@
           />
         </svg>
       </div>
-      <div class="folders-list__length"></div>
+      <div class="folders-list__length">{{ folders.length }} folder(s)</div>
       <div class="folders-list__type">directory</div>
     </div>
 

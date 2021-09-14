@@ -49,26 +49,7 @@ export default {
           }
         ]
       }],
-    files: [{
-      name: ".browserslistrc",
-      type: "application/octet-stream",
-      length: "1024"
-    },
-    {
-      name: ".gitignore",
-      type: "text/plain",
-      length: "231"
-    },
-    {
-      name: "babel.config.js",
-      type: "application/javascript",
-      length: "73"
-    },
-    {
-      name: "package-lock.json",
-      type: "application/json",
-      length: "47941"
-    }]
+    files: []
   }],
   files: [
     {
