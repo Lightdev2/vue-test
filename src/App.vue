@@ -32,14 +32,16 @@ html {
   background-color: rgb(13, 17, 23);
 }
 .app-wrapper {
-  width: 60%;
   margin: 0 auto;
   border-radius: 5px;
   border: 1px solid;
   border-color: grey;
   margin-top: 50px;
-  @media screen and (max-width: 1024px) {
-    width: 80%;
+  @media screen and (min-width: 320px) {
+    width: 95%;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 75%;
   }
 }
 .header {
