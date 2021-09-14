@@ -109,7 +109,7 @@ export default {
   &__folder {
     display: flex;
     align-items: center;
-    @media screen and (min-width:767px) {
+    @media screen and (min-width: 767px) {
       width: 50%;
     }
   }
@@ -129,7 +129,7 @@ export default {
     display: flex;
     align-items: center;
     cursor: pointer;
-    @media screen and (max-width:767px) {
+    @media screen and (max-width: 767px) {
       justify-content: space-between;
     }
     &:hover {
@@ -138,7 +138,7 @@ export default {
   }
   &__type {
     padding-right: 15px;
-    @media screen and (min-width:767px) {
+    @media screen and (min-width: 767px) {
       width: 35%;
       padding-right: 0;
     }

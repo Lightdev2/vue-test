@@ -38,7 +38,7 @@ export default {
   display: flex;
   margin-top: 5px;
   cursor: pointer;
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     justify-content: space-between;
   }
   &:hover {
@@ -47,7 +47,7 @@ export default {
   &__name {
     overflow: hidden;
     white-space: nowrap;
-    @media screen and (min-width:767px) {
+    @media screen and (min-width: 767px) {
       width: 50%;
     }
   }
