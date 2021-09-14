@@ -109,10 +109,14 @@ export default {
   &__folder {
     display: flex;
     align-items: center;
-    width: 50%;
+    @media screen and (min-width:767px) {
+      width: 50%;
+    }
   }
   &__length {
-    width: 15%;
+    @media screen and (min-width: 767px) {
+      width: 15%;
+    }
   }
   &__item {
     margin-top: 5px;
@@ -125,13 +129,19 @@ export default {
     display: flex;
     align-items: center;
     cursor: pointer;
-
+    @media screen and (max-width:767px) {
+      justify-content: space-between;
+    }
     &:hover {
       background-color: rgb(22, 27, 34);
     }
   }
   &__type {
-    width: 35%;
+    padding-right: 15px;
+    @media screen and (min-width:767px) {
+      width: 35%;
+      padding-right: 0;
+    }
   }
 }
 </style>

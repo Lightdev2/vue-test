@@ -38,16 +38,25 @@ export default {
   display: flex;
   margin-top: 5px;
   cursor: pointer;
+  @media screen and (max-width:767px) {
+    justify-content: space-between;
+  }
   &:hover {
     background-color: rgb(22, 27, 34);
   }
   &__name {
-    width: 50%;
     overflow: hidden;
     white-space: nowrap;
+    @media screen and (min-width:767px) {
+      width: 50%;
+    }
   }
   &__type {
-    width: 35%;
+    @media screen and (min-width: 767px) {
+      width: 35%;
+      padding-right: 0;
+    }
+    padding-right: 15px;
     overflow: hidden;
     white-space: nowrap;
   }
@@ -55,6 +64,9 @@ export default {
     width: 15%;
     overflow: hidden;
     white-space: nowrap;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
   margin-bottom: 5px;
 }

@@ -51,20 +51,32 @@ html {
   margin-bottom: 5px;
   font-size: 18px;
   color: rgb(186, 193, 194);
+  @media screen and (max-width: 767px) {
+    justify-content: space-between;
+  }
   &__name {
-    width: 50%;
     white-space: nowrap;
     overflow: hidden;
+    @media screen and (min-width: 767px) {
+      width: 50%;
+    }
   }
   &__lenght {
     width: 15%;
     white-space: nowrap;
     overflow: hidden;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
   &__type {
-    width: 35%;
     white-space: nowrap;
     overflow: hidden;
+    padding-right: 15px;
+    @media screen and (min-width: 767px) {
+      width: 35%;
+      padding-right: 0;
+    }
   }
 }
 </style>
