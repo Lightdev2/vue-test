@@ -47,7 +47,10 @@
           />
         </svg>
       </div>
-      <div class="folders-list__length">{{ folders.length }} folder(s)</div>
+      <div v-if="folders.length >= 0" class="folders-list__length">
+        {{ folders.length }} subfolder(s)
+      </div>
+      <div v-else class="folders-list__length"></div>
       <div class="folders-list__type">directory</div>
     </div>
 
@@ -81,8 +84,8 @@ export default {
   components: { FileView },
   props: {
     name: String,
-    folders: Array,
-    files: Array,
+    folders: [Set, Array],
+    files: [Set, Array],
     depth: Number,
     isOpen: Boolean,
   },
