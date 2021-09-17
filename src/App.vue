@@ -18,8 +18,8 @@
 
     <FolderView
       :name="mainName"
-      :folders="folders"
-      :files="files"
+      :folders="activeData.folders"
+      :files="activeData.files"
       :isOpen="true"
     />
   </div>
@@ -36,11 +36,29 @@ export default {
   },
   data: function() {
     return {
-      folders: data.folders,
-      files: data.files,
+      folders: [],
+      files: [],
       searchText: "",
-      mainName: "root",
+      findedFiles: {
+        files: new Set(),
+        folders: new Set(),
+      },
     };
+  },
+  computed: {
+    activeData: function() {
+      if (this.searchText.length > 0) {
+        return this.findedFiles;
+      } else {
+        return {
+          folders: this.folders,
+          files: this.files,
+        };
+      }
+    },
+    mainName: function() {
+      return this.searchText.length > 0 ? "Найденные файлы и папки" : "root";
+    },
   },
   created() {
     //вытаскиваем информацию из адрессной строки
@@ -50,6 +68,9 @@ export default {
     //заготовочка на будущее
     const VALID_KEYS = ["searchText"];
     //устанавливаем стэйт
+    this.files = data.files;
+    this.folders = data.folders;
+
     VALID_KEYS.forEach((key) => {
       if (windowData[key]) {
         this[key] = windowData[key];
@@ -67,42 +88,29 @@ export default {
       //сохраняем информацию о поиске
       history.pushState(null, " ", `?searchText=${this.searchText}`);
       localStorage.setItem("searchText", JSON.stringify(this.searchText));
-
-      if (this.searchText === "") {
-        this.folders = data.folders;
-        this.files = data.files;
-        this.mainName = "root";
-        return;
-      }
-      this.mainName = "Найденные файлы и папки:";
-      let result = {
-        files: new Set(),
-        folders: new Set(),
-      };
-      /**
-       * Рекурсивный поиск файлов и папок в глубину типа pre-order
-       * Все таки курс по алгоритмам из универа был полезен
-       */
-      let findItems = function findItems(folders, files, pattern) {
-        if (files == null) return;
-        if (folders == null) return;
-        files.forEach((file) => {
-          if (file.name.includes(pattern)) {
-            result.files.add(file);
-          }
-        });
-        folders.forEach((folder) => {
-          if (folder.name.includes(pattern)) {
-            result.folders.add(folder);
-          }
-          findItems(folder.folders, folder.files, pattern);
-        });
-        return result;
-      };
-
-      findItems(data.folders, data.files, this.searchText);
-      this.folders = result.folders;
-      this.files = result.files;
+      //Поиск файлов
+      this.findedFiles.folders = new Set();
+      this.findedFiles.files = new Set();
+      this.findItems(this.folders, this.files, this.searchText);
+    },
+  },
+  methods: {
+    //Реализация поиска файлов и папок в глубину
+    findItems(folders, files, pattern) {
+      if (files == null) return;
+      if (folders == null) return;
+      files.forEach((file) => {
+        if (file.name.includes(pattern)) {
+          this.findedFiles.files.add(file);
+        }
+      });
+      folders.forEach((folder) => {
+        if (folder.name.includes(pattern)) {
+          this.findedFiles.folders.add(folder);
+        }
+        this.findItems(folder.folders, folder.files, pattern);
+      });
+      return;
     },
   },
 };

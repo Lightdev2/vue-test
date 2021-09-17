@@ -49,7 +49,13 @@ export default {
           }
         ]
       }],
-    files: []
+    files: [
+      {
+        name: ".kekw",
+        type: "application/octet-stream",
+        length: "1024"
+      }
+    ]
   }],
   files: [
     {
