@@ -1,5 +1,5 @@
 <template>
-  <div class="file-row">
+  <div class="file-row" tabindex="0">
     <div class="file-row__name">
       <svg
         xmlns="http://www.w3.org/2000/svg"

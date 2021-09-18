@@ -39,6 +39,9 @@
       &:hover {
         background-color: $hovercolor;
       }
+      &:focus {
+        background-color: $hovercolor;
+      }
     }
     &__type {
       padding-right: 15px;

@@ -1,6 +1,6 @@
 <template>
   <ul class="folders-list">
-    <div class="folders-list__wrapper" @click="isOpen = !isOpen">
+    <div class="folders-list__wrapper" @click="isOpen = !isOpen" tabindex="0" @keydown.space="isOpen = !isOpen">
       <div class="folders-list__folder">
         <svg
           xmlns="http://www.w3.org/2000/svg"
